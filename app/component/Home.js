@@ -63,6 +63,12 @@ const Home = () => {
     }
   }
 
+   const handleKeyDown = (e) => {
+        if (e.key === 'Enter') {
+            handle_input(word);
+        }
+    };
+
   return (
     <div className='h-[100vh] flex flex-col gap-6 min-w-[80%] items-center p-[20px]'>
       <h1 className='text-center text-white text-2xl'>Dictionary Haven</h1>
@@ -76,6 +82,7 @@ const Home = () => {
         />
         <button
           onClick={() => { handle_input(word) }}
+          onKeyDown={handleKeyDown}
           className='bg-[#5ca6f1f3] text-white px-[15px] rounded py-[8px]'
         >
           Search
