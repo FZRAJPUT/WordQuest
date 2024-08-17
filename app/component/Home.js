@@ -13,7 +13,7 @@ const Home = () => {
 
   const handle_input = async (word) => {
     try {
-      if (!word) {
+      if (!word) { // Check if word is empty
         alert("Enter a word!");
         return;
       }
@@ -63,26 +63,27 @@ const Home = () => {
     }
   }
 
-   const handleKeyDown = (e) => {
-        if (e.key === 'Enter') {
-            handle_input(word);
-        }
-    };
+  // Function to handle the Enter key press
+  const handleKeyPress = (event) => {
+    if (event.key === "Enter") {
+      handle_input(word); // Trigger search on Enter key
+    }
+  }
 
   return (
-    <div className='h-[100vh] flex flex-col gap-6 min-w-[80%] items-center p-[20px]'>
+    <div className='h-[100vh] flex flex-col gap-6 max-w-[100%] bg-[url(/bg.jpg)] items-center p-[20px]'>
       <h1 className='text-center text-white text-2xl'>Dictionary Haven</h1>
-      <div className='min-w-[80%] ml-4 justify-center gap-5 py-2 rounded flex bg-[#7a787800] backdrop-blur-md'>
+      <div className='w-[600px] justify-center gap-5 py-2 rounded flex bg-[#7a787800] backdrop-blur-md'>
         <input
           className='px-[20px] w-[300px] border-none rounded outline-none backdrop-blur'
           onChange={(e) => { setword(e.target.value) }}
+          onKeyDown={handleKeyPress} // Add event listener for keypress
           type='text'
           value={word}
           placeholder='Enter any word!'
         />
         <button
           onClick={() => { handle_input(word) }}
-          onKeyDown={handleKeyDown(e)}
           className='bg-[#5ca6f1f3] text-white px-[15px] rounded py-[8px]'
         >
           Search
@@ -90,11 +91,11 @@ const Home = () => {
       </div>
       {loading && <Loading />}
       {!loading && description && (
-        <div className='bg-slate-200 ml-4 w-[90%] flex flex-col rounded gap-1 px-[10px] py-3'>
-          <h1 className='w-[100%] p-[10px] flex gap-[8px] capitalize'><span className='font-bold flex'>Word  </span> {word}</h1>
-          <h1 className='w-[100%] p-[10px] flex gap-[8px] capitalize'><span className='font-bold flex'>Meaning </span> {description}</h1>
-          <h1 className='w-[100%] p-[10px] flex gap-[8px] capitalize'><span className='font-bold flex'>Synonyms </span> {synonyms}</h1>
-          <h1 className='w-[100%] p-[10px] flex gap-[8px] capitalize'><span className='font-bold flex'>Antonyms </span> {antonyms}</h1>
+        <div className='bg-slate-200 w-[410px] flex flex-col rounded gap-1 px-[10px] py-3'>
+          <h1 className='w-[100%] p-[10px] flex gap-[8px] capitalize'><span className='font-bold flex'>Word :  </span> {word}</h1>
+          <h1 className='w-[100%] p-[10px] flex gap-[8px] capitalize'><span className='font-bold flex'>Synonyms :  </span> {synonyms}</h1>
+          <h1 className='w-[100%] p-[10px] flex gap-[8px] capitalize'><span className='font-bold flex'>Antonyms :  </span> {antonyms}</h1>
+          <h1 className='w-[100%] p-[10px] flex gap-[8px] capitalize'><span className='font-bold flex'>Meaning :  </span> {description}</h1>
           {audio && (
             <div className='w-full flex items-center justify-center'>
               <audio controls>
