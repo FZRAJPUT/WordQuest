@@ -92,10 +92,10 @@ const Home = () => {
       {loading && <Loading />}
       {!loading && description && (
         <div className='bg-slate-200 w-[410px] flex flex-col rounded gap-1 px-[10px] py-3'>
-          <h1 className='w-[100%] p-[10px] flex gap-[8px] capitalize'><span className='font-bold flex'>Word :  </span> {word}</h1>
-          <h1 className='w-[100%] p-[10px] flex gap-[8px] capitalize'><span className='font-bold flex'>Synonyms :  </span> {synonyms}</h1>
-          <h1 className='w-[100%] p-[10px] flex gap-[8px] capitalize'><span className='font-bold flex'>Antonyms :  </span> {antonyms}</h1>
-          <h1 className='w-[100%] p-[10px] flex gap-[8px] capitalize'><span className='font-bold flex'>Meaning :  </span> {description}</h1>
+          <h1 className='w-[100%] p-[10px] flex gap-[8px] capitalize'><span className='font-bold flex'>Word </span> {word}</h1>
+          <h1 className='w-[100%] p-[10px] flex gap-[8px] capitalize'><span className='font-bold flex'>Meaning </span> {description}</h1>
+          <h1 className='w-[100%] p-[10px] flex gap-[8px] capitalize'><span className='font-bold flex'>Synonyms </span> {synonyms}</h1>
+          <h1 className='w-[100%] p-[10px] flex gap-[8px] capitalize'><span className='font-bold flex'>Antonyms </span> {antonyms}</h1>
           {audio && (
             <div className='w-full flex items-center justify-center'>
               <audio controls>
