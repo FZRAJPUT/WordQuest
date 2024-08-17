@@ -64,9 +64,9 @@ const Home = () => {
   }
 
   return (
-    <div className='h-[100vh] flex flex-col gap-6 max-w-[100%] bg-[url(/bg.jpg)] items-center p-[20px]'>
+    <div className='h-[100vh] flex flex-col gap-6 min-w-[80%] items-center p-[20px]'>
       <h1 className='text-center text-white text-2xl'>Dictionary Haven</h1>
-      <div className='w-[600px] justify-center gap-5 py-2 rounded flex bg-[#7a787800] backdrop-blur-md'>
+      <div className='min-w-[80%] ml-4 justify-center gap-5 py-2 rounded flex bg-[#7a787800] backdrop-blur-md'>
         <input
           className='px-[20px] w-[300px] border-none rounded outline-none backdrop-blur'
           onChange={(e) => { setword(e.target.value) }}
@@ -83,11 +83,11 @@ const Home = () => {
       </div>
       {loading && <Loading />}
       {!loading && description && (
-        <div className='bg-slate-200 w-[410px] flex flex-col rounded gap-1 px-[10px] py-3'>
-          <h1 className='w-[100%] p-[10px] flex gap-[8px] capitalize'><span className='font-bold flex'>Word :  </span> {word}</h1>
-          <h1 className='w-[100%] p-[10px] flex gap-[8px] capitalize'><span className='font-bold flex'>Meaning :  </span> {description}</h1>
-          <h1 className='w-[100%] p-[10px] flex gap-[8px] capitalize'><span className='font-bold flex'>Synonyms :  </span> {synonyms}</h1>
-          <h1 className='w-[100%] p-[10px] flex gap-[8px] capitalize'><span className='font-bold flex'>Antonyms :  </span> {antonyms}</h1>
+        <div className='bg-slate-200 ml-4 w-[90%] flex flex-col rounded gap-1 px-[10px] py-3'>
+          <h1 className='w-[100%] p-[10px] flex gap-[8px] capitalize'><span className='font-bold flex'>Word  </span> {word}</h1>
+          <h1 className='w-[100%] p-[10px] flex gap-[8px] capitalize'><span className='font-bold flex'>Meaning </span> {description}</h1>
+          <h1 className='w-[100%] p-[10px] flex gap-[8px] capitalize'><span className='font-bold flex'>Synonyms </span> {synonyms}</h1>
+          <h1 className='w-[100%] p-[10px] flex gap-[8px] capitalize'><span className='font-bold flex'>Antonyms </span> {antonyms}</h1>
           {audio && (
             <div className='w-full flex items-center justify-center'>
               <audio controls>
