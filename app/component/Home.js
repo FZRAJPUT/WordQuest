@@ -82,7 +82,7 @@ const Home = () => {
         />
         <button
           onClick={() => { handle_input(word) }}
-          onKeyDown={handleKeyDown}
+          onKeyDown={handleKeyDown(e)}
           className='bg-[#5ca6f1f3] text-white px-[15px] rounded py-[8px]'
         >
           Search
